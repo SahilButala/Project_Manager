@@ -10,3 +10,10 @@ export const userSchema = z.object({
      role : z.string().min(1 , "role is required "),
   image : z.string().optional()
 })
+
+
+export const workspaceSchmea = z.object({
+    name : z.string().min(2 , "Name is required").max(100 , "Maximum is 100 character"),
+    description : z.string().optional()
+    
+})
