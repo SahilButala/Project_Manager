@@ -65,7 +65,6 @@ enum AccessLevel {
 
 model WorkspaceMember {
   id            String          @id @default(uuid())
-
   userId        String
   user          User            @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -81,7 +80,7 @@ model WorkspaceMember {
   updatedAt     DateTime        @updatedAt
 
   @@unique([userId, workspaceId])
-  @@index([workspaceId])
+
 }
 
 // ===================================
